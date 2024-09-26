@@ -8,7 +8,7 @@ let query stub arg =
 
 let put stub key value =
   putState stub ~key ~value;
-  Response.success ()
+  Response.success ()  (* Ensure we return a success response *)
 
 let () =
   loop ~id_name:"mycc:1.0" ~target
@@ -18,4 +18,5 @@ let () =
       match (fname, args) with
       | "query", [ a ] -> query stub a
       | "put", [ a; v ] -> put stub a v
-      | _ -> Response.error ~message:"Unknown function" ())
+      | _ -> Response.error ~message:"Unknown function" ()
+    )
