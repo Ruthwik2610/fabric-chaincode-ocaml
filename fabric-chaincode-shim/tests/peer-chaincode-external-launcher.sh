@@ -16,7 +16,7 @@ mkdir -p $DESTDIR
 cd $DESTDIR
 
 # 1 -- Clone
-git clone https://github.com/hyperledger/fabric --branch release-2.5 --depth=1
+git clone https://github.com/hyperledger/fabric --depth=1
 cd fabric
 
 # Additional change configuration
